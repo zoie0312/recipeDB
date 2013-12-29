@@ -128,9 +128,12 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'south',
 )
 
-LOCAL_APPS = ()
+LOCAL_APPS = (
+    'recipes',
+)
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
