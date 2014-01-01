@@ -13,7 +13,7 @@ class IngredientAdmin(admin.ModelAdmin):
 class RecipeAdmin(admin.ModelAdmin):
 	#fields = ("id", "yum_id", "recipeName", "ingredients", "cuisines",
 	#	"courses", "smallImageUrls", "sourceDisplayName")
-	list_display = ["id", "recipeName", "ingredients", "cuisines", "courses"]
+	list_display = ["id", "recipeName", "used_db_ingredients", "cuisines", "courses"]
 	list_display_link = ["recipeName"]
 	list_filter = ["recipeName", "cuisines", "courses"]
 	search_fields = ["recipeName", "cuisines", "courses"]
@@ -21,7 +21,7 @@ class RecipeAdmin(admin.ModelAdmin):
 class UsedInAdmin(admin.ModelAdmin):
 	#fields = ("recipe_id", "ingredient_id", "recipeName", "ingredientName")
 	list_display = ["recipe_id", "ingredient_id", "recipeName", "ingredientName"]
-	list_filter = ["recipeName", "ingredientName", "recipeName"]
+	list_filter = ["ingredientName", "recipeName"]
 	search_fields = ["ingredientName"]
 
 

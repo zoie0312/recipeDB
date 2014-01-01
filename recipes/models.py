@@ -18,6 +18,7 @@ class Recipe(models.Model):
 	courses = models.TextField(null=True)
 	smallImageUrls = models.CharField(max_length=255, null=True)
 	sourceDisplayName = models.CharField(max_length=200)
+	used_db_ingredients = models.TextField()
 
 
 class UsedIn(models.Model):
