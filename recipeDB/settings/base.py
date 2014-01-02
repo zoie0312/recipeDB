@@ -1,5 +1,15 @@
+from os.path import join, abspath, dirname
 import dj_database_url
 # Django settings for recipeDB project.
+
+# here() gives us file paths from the root of the system to the directory
+# holding the current file.
+here = lambda * x: join(abspath(dirname(__file__)), *x)
+
+PROJECT_ROOT = here("..")
+# root() gives us file paths from the root of the system to whatever
+# folder(s) we pass it starting at the parent directory of the current file.
+root = lambda * x: join(abspath(PROJECT_ROOT), *x)
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -56,7 +66,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = root("..", "static")
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
